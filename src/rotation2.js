@@ -91,3 +91,7 @@ function degreesToRadians(degree) {
 
 // mini challenge: I challenge you guys to make one side of the spinning cube always face the center.
 // tip: you just have to add look at 0,0,0 and it can be easily achieved
+
+
+// -1 ≤ Math.sin(angle) ≤ 1
+// -1 ≤ Math.cos(angle) ≤ 1
