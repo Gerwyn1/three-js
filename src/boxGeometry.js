@@ -49,12 +49,10 @@ animate();
 // number of vertices per side = (2 + number of segments - 1) multiply by itself?
 // number of faces per side = number of segments multiply by itself then multiply by 2?
 
-
 // new THREE.BoxGeometry(1, 1, 1, 3, 3, 3);
 // Each edge of the box is subdivided into 3 segments.
 // Now each side of the cube has many smaller squares (each split into 2 triangles).
 // That means way more vertices and faces.
-
 
 // Increasing segments gives you more geometry detail to work with.
 
@@ -83,7 +81,6 @@ animate();
 
 // 👉 So in short:
 // Subdivisions = how many times the geometry is split into smaller pieces. More segments = more detail, smoother deformations, better displacement/lighting — but also heavier performance cost.
-
 
 // What does it mean when height map is all "high". : r/3DprintingA heightmap is a grayscale image where pixel brightness represents elevation, with white pixels indicating high points and black pixels indicating low points. In computer graphics, heightmaps are used to create the illusion of 3D topography on flat surfaces, allowing for detailed terrains and textures by displacing the geometry or influencing lighting. They can also be used to store real-world surface elevation data or to represent the height variance of a 3D printer bed.
 
