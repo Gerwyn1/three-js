@@ -27,6 +27,9 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 const gui = new GUI();
+// To adjust colors for more objects/cubes/shapes:
+// 1. add new color props to settings object.
+// 2. add new addColor onChange function.
 const settings = { color: cube.material.color }; // Default color: Green
 const sceneSettings = { background: scene.background }; // Default dark blue
 
