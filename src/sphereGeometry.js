@@ -56,6 +56,7 @@ function createSphere() {
   }
 
   geometry = new THREE.SphereGeometry(
+    // ...Object.values(params)
     params.radius,
     params.widthSegments,
     params.heightSegments,
