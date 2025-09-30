@@ -12,6 +12,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper";
 import { RectAreaLightUniformsLib } from "three/examples/jsm/lights/RectAreaLightUniformsLib";
+import GUI from "lil-gui";
 
 RectAreaLightUniformsLib.init();
 
@@ -31,6 +32,45 @@ document.body.appendChild(renderer.domElement);
 
 // Add OrbitControls to the camera
 const controls = new OrbitControls(camera, renderer.domElement);
+
+// Lights config
+const config = {
+  wireframe: false,
+  color: "#ffffff",
+  roughness: 0.4,
+
+  // Rect Light 1 - Green
+  color1: "#37ff00",
+  intensity1: 20,
+  width1: 4,
+  height1: 10,
+  x1: -5,
+  y1: 2,
+  z1: -5,
+
+  // Rect Light 2 - Red
+  color2: "#ff0000",
+  intensity2: 20,
+  width2: 4,
+  height2: 10,
+  x2: 0,
+  y2: 2,
+  z2: -5,
+
+  // Rect Light 3 - Blue
+  color3: "#0008ff",
+  intensity3: 20,
+  width3: 4,
+  height3: 10,
+  x3: 5,
+  y3: 2,
+  z3: -5,
+};
+
+const gui = new GUI();
+gui.add(config, "wireframe");
+gui.addColor(config, "color");
+gui.add(config, "roughness", 0, 1, 0.01);
 
 // Ambient Light
 scene.add(new THREE.AmbientLight(0xffffff, 0.3));
@@ -77,9 +117,43 @@ rectLight3.position.set(5, 2, -5);
 rectLight3.rotation.y = Math.PI;
 scene.add(rectLight3, new RectAreaLightHelper(rectLight3));
 
+// === Light GUI folders ===
+const f1 = gui.addFolder("Light 1 (Green)");
+f1.addColor(config, "color1").onChange(() => rectLight1.color.set(config.color1));
+f1.add(config, "intensity1", 0, 50).onChange(() => (rectLight1.intensity = config.intensity1));
+f1.add(config, "width1", 0, 20).onChange(() => (rectLight1.width = config.width1));
+f1.add(config, "height1", 0, 20).onChange(() => (rectLight1.height = config.height1));
+f1.add(config, "x1", -10, 10).onChange(() => (rectLight1.position.x = config.x1));
+f1.add(config, "y1", -10, 10).onChange(() => (rectLight1.position.y = config.y1));
+f1.add(config, "z1", -10, 10).onChange(() => (rectLight1.position.z = config.z1));
+
+const f2 = gui.addFolder("Light 2 (Red)");
+f2.addColor(config, "color2").onChange(() => rectLight2.color.set(config.color2));
+f2.add(config, "intensity2", 0, 50).onChange(() => (rectLight2.intensity = config.intensity2));
+f2.add(config, "width2", 0, 20).onChange(() => (rectLight2.width = config.width2));
+f2.add(config, "height2", 0, 20).onChange(() => (rectLight2.height = config.height2));
+f2.add(config, "x2", -10, 10).onChange(() => (rectLight2.position.x = config.x2));
+f2.add(config, "y2", -10, 10).onChange(() => (rectLight2.position.y = config.y2));
+f2.add(config, "z2", -10, 10).onChange(() => (rectLight2.position.z = config.z2));
+
+const f3 = gui.addFolder("Light 3 (Blue)");
+f3.addColor(config, "color3").onChange(() => rectLight3.color.set(config.color3));
+f3.add(config, "intensity3", 0, 50).onChange(() => (rectLight3.intensity = config.intensity3));
+f3.add(config, "width3", 0, 20).onChange(() => (rectLight3.width = config.width3));
+f3.add(config, "height3", 0, 20).onChange(() => (rectLight3.height = config.height3));
+f3.add(config, "x3", -10, 10).onChange(() => (rectLight3.position.x = config.x3));
+f3.add(config, "y3", -10, 10).onChange(() => (rectLight3.position.y = config.y3));
+f3.add(config, "z3", -10, 10).onChange(() => (rectLight3.position.z = config.z3));
+
 // Animation loop
 function animate() {
   requestAnimationFrame(animate);
+
+  // GUI controls
+  material.wireframe = config.wireframe;
+  material.color.set(config.color);
+  material.roughness = config.roughness;
+
   knot.rotation.y += 0.005;
   controls.update(); // Update the controls
   // Render the scene
@@ -121,3 +195,15 @@ animate();
 // RectAreaLightHelper: This draws a visual plane representing the light’s position, direction, and bounds.
 
 // Note: Helpers may glitch (z-fighting) if the light is too thin or overlapping other surfaces — this is expected.
+
+// 🌍 Where to Use RectAreaLight?
+// Interior design: simulate soft ceiling lights or backlit furniture
+// Product visualization: highlight models with a softbox feel
+// Sci-fi & UI panels: glowing signage or ambient tech lighting
+// Photographic setups: simulate real-world studio lighting
+// 🚧 Limitations
+// Before we wrap up, let’s address the caveats:
+
+// Does not cast shadows
+// Only works with physically-based materials
+// Still, for realism and soft visual quality, RectAreaLight is one of the best tools in the kit.
