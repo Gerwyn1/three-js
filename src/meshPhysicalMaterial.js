@@ -25,8 +25,11 @@ const material = new THREE.MeshPhysicalMaterial({
   // Controls the roughness of the clearcoat layer. A value of 0 makes the clearcoat perfectly smooth, while a value of 1 makes it rough.
   clearcoatRoughness: 0.1, // Smooth clearcoat
   // The thickness of the material in the direction of the normal. This is used to simulate subsurface scattering for materials such as marble.
-  thickness: 0.01, // Thin material
+  // how far light can travel *into* the material, measured along the surface normal
+  thickness: 0.01, // Thin material,
   // specular: relating to or having the properties of a mirror.
   // Controls the intensity of the specular highlights on the material.
   specularIntensity: 0.8, // Strong specular highlights
+
 });
+
