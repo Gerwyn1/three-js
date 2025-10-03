@@ -1,0 +1,4 @@
+HDR_041_Path.hdr filter=lfs diff=lfs merge=lfs -text
+src/Cube_Texture/HDR_041_Path.hdr filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+*.hr filter=lfs diff=lfs merge=lfs -text
