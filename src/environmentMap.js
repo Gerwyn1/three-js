@@ -233,6 +233,6 @@ animate();
 
 // 🎉 That’s a wrap on our
 // Textures Module
-// ! You’ve learned how to paint, sculpt, reflect, and even glow with nothing but images. Next up: we’re stepping into the world of
+//  You’ve learned how to paint, sculpt, reflect, and even glow with nothing but images. Next up: we’re stepping into the world of
 // Models
 // — learning how to import, optimize, and animate fully-fledged 3D characters, props, and scenes. Get ready to bring your creations to life 🚀
