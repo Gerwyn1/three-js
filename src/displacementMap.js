@@ -185,3 +185,6 @@ animate();
 // Interactively toggle maps on and off
 // Understand why geometry resolution truly matters
 // Whether you’re building a rugged stone wall, a fantasy creature, or a stylized rooftop — this tool gives you the freedom to sculpt with light and pixels.
+
+
+// primary purpose of using a displacement map: provide actual surface depth by moving vertices
