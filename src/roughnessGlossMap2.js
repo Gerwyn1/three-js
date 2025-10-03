@@ -124,3 +124,9 @@ function animate() {
 }
 
 animate();
+
+// "Whether it’s polished marble or scuffed wood — it’s all about roughness."
+
+// In the next lesson, we’ll explore the Displacement Map — a powerful texture that doesn’t just trick the light… it actually moves the geometry!
+
+// Get ready to sculpt your models using just an image file 🧱👀

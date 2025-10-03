@@ -36,8 +36,8 @@ const geometry = new THREE.SphereGeometry(2, 64, 64);
 
 // Textures
 const textureLoader = new THREE.TextureLoader();
-const colorMap = textureLoader.load("/src/bamboo.png");
-const normalMap = textureLoader.load("/src/bamboo.png");
+const colorMap = textureLoader.load("/src/Bricks031_1K-PNG_Color.png");
+const normalMap = textureLoader.load("/src/Bricks031_1K-PNG_NormalGL.png");
 
 // Material
 const material = new THREE.MeshStandardMaterial({
