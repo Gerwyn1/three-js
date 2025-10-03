@@ -55,6 +55,7 @@ const settings = {
   showNormalMap: true,
   useRoughnessMap: true,
   roughness: 0.5,
+  // effectiveRoughness = roughness * roughnessMapValue
 };
 
 gui
@@ -126,3 +127,7 @@ animate();
 // roughness: 0 → Surface is perfectly smooth and highly reflective (like a mirror or polished metal).
 // roughness: 1 → Surface is completely rough and scatters light in all directions (like chalk or sandpaper).
 // roughness: 0.5 → A semi-matte look. Some reflection, but not sharp. Think plastic or brushed metal.
+
+// Low roughness = tight, sharp highlights
+// High roughness = soft, scattered lighting
+// This single value gives you a lot of control — even without a roughness map!
