@@ -54,7 +54,7 @@ mtlLoader.load("/src/Obj/Chair.mtl", (materials) => {
   // Sets materials loaded by MTLLoader
   objLoader.setMaterials(materials); // https://threejs.org/docs/index.html?q=loader#examples/en/loaders/OBJLoader.setMaterials
   objLoader.load("/src/Obj/Chair.obj", (object) => {
-    // load the object as GLTFLoder
+    // load the object as GLTFLoader
     scene.add(object);
     object.scale.setScalar(3);
     object.position.y = -2;
